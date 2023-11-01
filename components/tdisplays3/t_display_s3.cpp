@@ -17,6 +17,8 @@ void TDisplayS3::setup() {
   if (this->spr_->createSprite(get_width_internal(), get_height_internal()) == nullptr) {
     this->mark_failed();
   }
+  pinMode(15, OUTPUT); // to boot with battery...
+  digitalWrite(15,1);  // and/or power from 5v rail instead of USB
 }
 
 void TDisplayS3::dump_config() {
